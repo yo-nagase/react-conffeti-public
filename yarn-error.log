@@ -1,0 +1,80 @@
+Arguments: 
+  /Users/nagase/.nvm/versions/node/v18.14.2/bin/node /Users/nagase/.nvm/versions/node/v18.14.2/bin/yarn install
+
+PATH: 
+  /opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/rbenv/shims:/opt/homebrew/opt/rbenv/bin:/Users/nagase/istio-1.20.1/bin:/Users/nagase/go/bin:/Users/nagase/.amplify/bin:/Users/nagase/.nvm/versions/node/v18.14.2/bin:/Users/nagase/.nvm/versions/node/v18.14.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:~/.dotnet/tools:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/nagase/.nvm/versions/node/v18.14.2/bin:/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/opt/rbenv/shims:/opt/homebrew/opt/rbenv/bin:/Users/nagase/istio-1.20.1/bin:/Users/nagase/go/bin:/Users/nagase/.amplify/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/nagase/go/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.14.2
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/nagase/Documents/git-repo/react-conffeti-public/package.json: Unexpected token } in JSON at position 880
+      at JSON.parse (<anonymous>)
+      at /Users/nagase/.nvm/versions/node/v18.14.2/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/nagase/.nvm/versions/node/v18.14.2/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/nagase/.nvm/versions/node/v18.14.2/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "stackblitz-starters-asbatg",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject",
+      "predeploy": "npm run build",
+      "deploy": "npm run build && gh-pages -d build"
+    },
+    "dependencies": {
+      "@types/gh-pages": "^6.1.0",
+      "@types/react": "18.2.48",
+      "@types/react-dom": "18.2.18",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "@emotion/react": "^11.11.3",
+      "@emotion/styled": "^11.11.0",
+      "@mui/icons-material": "^5.15.4",
+      "@mui/material": "^5.15.4",
+      "@types/node": "20.6.2",
+      "autoprefixer": "10.4.15",
+      "canvas-confetti": "^1.9.2",
+      "eslint": "8.49.0",
+      "eslint-config-next": "13.5.1",
+      "next": "13.5.1",
+      "postcss": "8.4.30",
+      "tailwindcss": "3.3.3",
+    },
+    "devDependencies": {
+      "gh-pages": "^6.1.1",
+      "@types/canvas-confetti": "^1.6.4",
+      "react-scripts": "latest"
+    },
+    "homepage": "https://yo-nagase.github.io/react-conffeti-public/",
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
