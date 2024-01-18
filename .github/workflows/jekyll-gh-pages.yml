@@ -36,8 +36,8 @@ jobs:
         run: npm ci
       - name: build app
         run: npm run build
-        # env:
-        #   PUBLIC_URL: /game
+        env:
+          PUBLIC_URL: /react-conffeti-public
       - name: upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
