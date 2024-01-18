@@ -28,24 +28,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: setup node
+        uses: actions/setup-node@v3
         with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
+          node-version: 18.x
+      - name: install dependencies
+        run: npm ci
+      - name: build app
+        run: npm run build
+        env:
+          PUBLIC_URL: /game
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build
+      - name: deploy to github pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v1
+
+  # # Deployment job
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
