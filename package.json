@@ -16,9 +16,21 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-   "homepage": "https://yo-nagase.github.io/react-conffeti-public/",
+  "homepage": "https://yo-nagase.github.io/react-conffeti-public/",
   "devDependencies": {
     "gh-pages": "^6.1.1",
     "react-scripts": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
