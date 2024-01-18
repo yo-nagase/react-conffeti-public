@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-conffeti-public/static/css/main.be2963ec.css",
+    "main.js": "/react-conffeti-public/static/js/main.ffa0c0b0.js",
+    "index.html": "/react-conffeti-public/index.html",
+    "main.be2963ec.css.map": "/react-conffeti-public/static/css/main.be2963ec.css.map",
+    "main.ffa0c0b0.js.map": "/react-conffeti-public/static/js/main.ffa0c0b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be2963ec.css",
+    "static/js/main.ffa0c0b0.js"
+  ]
+}
