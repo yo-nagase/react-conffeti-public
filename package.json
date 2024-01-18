@@ -3,18 +3,22 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "@types/react": "18.2.48",
-    "@types/react-dom": "18.2.18"
+    "@types/react-dom": "18.2.18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+   "homepage": "https://yo-nagase.github.io/react-conffeti-public/",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "react-scripts": "latest"
   }
 }
