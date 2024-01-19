@@ -30,7 +30,8 @@ export const App: FC<{ name: string }> = ({ name }) => {
   const {
     handleBatchErrorConfetti, batchErrorConfetti,
     handleMonthlyTaskCompletedConfetti, monthlyTaskCompletedConfetti,
-    handleYearlyTaskCompletedConfetti, yearlyTaskCompletedConfetti
+    handleYearlyTaskCompletedConfetti, yearlyTaskCompletedConfetti,
+    handleGameFinithConfetti, gameFinishConfetti
   } = useTpoConfetti()
 
   const randomConfetti = () => {
@@ -212,6 +213,9 @@ export const App: FC<{ name: string }> = ({ name }) => {
               </Button>
               <Button variant="outlined" onClick={handleYearlyTaskCompletedConfetti} ref={yearlyTaskCompletedConfetti} >
                 会計ツールで<br />年次作業が完了
+              </Button>
+              <Button variant="outlined" onClick={handleGameFinithConfetti} ref={gameFinishConfetti} >
+                Gameで<br />フィニッシュ！
               </Button>
             </Stack>
           </Item>
