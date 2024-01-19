@@ -8,6 +8,7 @@ import { useRef, useState } from 'react';
 import useSmallConffeti from "./components/useSmallConffeti";
 
 import './style.css';
+import useEventConfetti from './components/useEventConfetti';
 import useTpoConfetti from './components/useTpoConfetti';
 
 export const App: FC<{ name: string }> = ({ name }) => {
@@ -24,6 +25,12 @@ export const App: FC<{ name: string }> = ({ name }) => {
     handleChristmasConfetti, christmasConfetti,
     handleHallowinConfetti, hallowinConfetti,
     handleNewYearConfetti, newYearConfetti
+  } = useEventConfetti()
+
+  const {
+    handleBatchErrorConfetti, batchErrorConfetti,
+    handleMonthlyTaskCompletedConfetti, monthlyTaskCompletedConfetti,
+    handleYearlyTaskCompletedConfetti, yearlyTaskCompletedConfetti
   } = useTpoConfetti()
 
   const randomConfetti = () => {
@@ -136,44 +143,22 @@ export const App: FC<{ name: string }> = ({ name }) => {
       <Stack
         //direction="row"
         spacing={5}
-        sx={{ paddingBottom: "30px" }}
+        sx={{ paddingBottom: "80px", paddingTop: "80px" }}
         justifyContent="center" // ボタンを水平方向に真ん中に寄せます
         alignItems="center" // ボタンを垂直方向に真ん中に寄せます
       >
+        <h1>🎉紙吹雪サンプル🎉</h1>
         <Stack
           //direction="row"
           spacing={3}
           justifyContent="center" // ボタンを水平方向に真ん中に寄せます
           alignItems="left" // ボタンを垂直方向に真ん中に寄せます
         >
-
-          <Box sx={{ width: "600px", padding: '0px' }}>
+          <Box sx={{ width: "800px", paddingTop: '150px' }}>
             <Typography sx={{ fontSize: "23px", fontWeight: "700" }}>
               ボタンの中央を起点とした紙吹雪
             </Typography>
           </Box>
-
-          <Item>
-            あああああっs
-            <Button onClick={handleButton1} variant="outlined" sx={{}}>
-              1-1.絵文字をパーン
-            </Button>
-          </Item>
-          <Item>
-            <Button variant="outlined" onClick={handleButton2} ref={buttonRef2}>
-              1-2.大きくパーン
-            </Button>
-          </Item>
-          <Item>
-            <Typography sx={{ paddingBottom: "5px" }}>
-              あああ
-            </Typography>
-            <Stack direction="row" spacing={2}>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
-                1-4.小さめのパーン(1)
-              </Button>
-            </Stack>
-          </Item>
           <Item>
             <Typography sx={{ paddingBottom: "5px" }}>
               小さめの紙吹雪
@@ -199,30 +184,10 @@ export const App: FC<{ name: string }> = ({ name }) => {
               </Button> */}
             </Stack>
           </Item>
+
           <Item>
-            <Typography sx={{ paddingBottom: "5px" }}>
-              TPOにあわせた紙吹雪
-            </Typography>
-            <Stack direction="row" spacing={2}>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
-                会計ツールで<br />月次作業が完了
-              </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
-                会計ツールで<br />年次作業が完了
-              </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
-                勤怠入力アプリで退勤処理
-              </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
-                社内連携アプリで<br />
-                繋がりができた
-              </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
-                バッチが異常終了
-              </Button>
-            </Stack>
             <Typography sx={{ padding: "5px" }}>
-              TPOにあわせた紙吹雪
+              イベントに合わせた紙吹雪
             </Typography>
             <Stack direction="row" spacing={2}>
               <Button variant="outlined" onClick={handleChristmasConfetti} ref={christmasConfetti} >
@@ -231,63 +196,57 @@ export const App: FC<{ name: string }> = ({ name }) => {
               <Button variant="outlined" onClick={handleHallowinConfetti} ref={hallowinConfetti} >
                 ハロウィン
               </Button>
-              {/* <Button variant="outlined" onClick={handleNewYearConfetti} ref={newYearConfetti} >
-                お正月
-              </Button> */}
             </Stack>
           </Item>
-          <Item>
-            <Button variant="outlined" ref={buttonRef3}  >
-              1-5.ド派手なパーン
-            </Button>
-          </Item>
-          <Item>
-            <Button variant="outlined" ref={buttonRef3}  >
-              1-6.大量の紙吹雪！
-            </Button>
-          </Item>
-          <Item>
-            <Button variant="outlined" ref={buttonRef3}  >
-              1-7.すべてのオプションを指定
-            </Button>
-          </Item>
 
+          <Item>
+            <Typography sx={{ paddingBottom: "5px" }}>
+              TPOにあわせた紙吹雪
+            </Typography>
+            <Stack direction="row" spacing={2}>
+              <Button variant="outlined" onClick={handleBatchErrorConfetti} ref={batchErrorConfetti} >
+                バッチが異常終了
+              </Button>
+              <Button variant="outlined" onClick={handleMonthlyTaskCompletedConfetti} ref={monthlyTaskCompletedConfetti} >
+                会計ツールで<br />月次作業が完了
+              </Button>
+              <Button variant="outlined" onClick={handleYearlyTaskCompletedConfetti} ref={yearlyTaskCompletedConfetti} >
+                会計ツールで<br />年次作業が完了
+              </Button>
+            </Stack>
+          </Item>
         </Stack>
-      </Stack>
 
-
-
-
-      <Stack
-        //direction="row"
-        spacing={5}
-        justifyContent="center" // ボタンを水平方向に真ん中に寄せます
-        alignItems="center" // ボタンを垂直方向に真ん中に寄せます
-      >
-        <Box sx={{ width: "600px", padding: '10px', background: "#444444" }}>
-          <Typography sx={{ fontSize: "20px", fontWeight: "700" }}>
-            画面上の様々な場所を起点とした紙吹雪
-          </Typography>
-        </Box>
         <Stack
-          //direction="row"
           spacing={3}
           justifyContent="center" // ボタンを水平方向に真ん中に寄せます
-          alignItems="center" // ボタンを垂直方向に真ん中に寄せます
+          alignItems="left" // ボタンを垂直方向に真ん中に寄せます
         >
+          <Box sx={{ width: "800px", padding: '0px' }}>
+            <Typography sx={{ fontSize: "23px", fontWeight: "700" }}>
+              画面上の様々な場所を起点とした紙吹雪
+            </Typography>
+          </Box>
+
+
           <Item>
-            <Button variant="outlined" onClick={randomConfetti} >
-              2-1.ランダムにパーン
-            </Button>
-            <Button variant="outlined" onClick={randomConfetti} >
-              2-2.画面両サイドから紙吹雪
-            </Button>
-            <Button variant="outlined" onClick={randomConfetti} >
-              2-3.
-            </Button>
+            <Typography sx={{ padding: "5px" }}>
+              工事中
+            </Typography>
+            <Stack direction="row" spacing={2}>
+              <Button variant="outlined" >
+                工事中1
+              </Button>
+              <Button variant="outlined"  >
+                工事中2
+              </Button>
+            </Stack>
           </Item>
 
+
+
         </Stack>
+
 
       </Stack>
 
