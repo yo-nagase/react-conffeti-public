@@ -8,10 +8,23 @@ import { useRef, useState } from 'react';
 import useSmallConffeti from "./components/useSmallConffeti";
 
 import './style.css';
+import useTpoConfetti from './components/useTpoConfetti';
 
 export const App: FC<{ name: string }> = ({ name }) => {
 
-  const { handleNormalConfetti, normalConfetti } = useSmallConffeti()
+  const { handleNormalConfetti, normalConfetti,
+    handleAllDirectionConfetti, allDirectionConfetti,
+    handleWeakConfetti, weakConfetti,
+    handleSlowConfetti, slowConfetti,
+    handleColoredConfetti, coloredConfetti,
+    handleFlashyConfetti, flashyConfetti
+  } = useSmallConffeti()
+
+  const {
+    handleChristmasConfetti, christmasConfetti,
+    handleHallowinConfetti, hallowinConfetti,
+    handleNewYearConfetti, newYearConfetti
+  } = useTpoConfetti()
 
   const randomConfetti = () => {
     console.log("xxxx")
@@ -134,8 +147,8 @@ export const App: FC<{ name: string }> = ({ name }) => {
           alignItems="left" // ボタンを垂直方向に真ん中に寄せます
         >
 
-          <Box sx={{ width: "600px", padding: '10px', background: "#444444" }}>
-            <Typography sx={{ fontSize: "20px", fontWeight: "700" }}>
+          <Box sx={{ width: "600px", padding: '0px' }}>
+            <Typography sx={{ fontSize: "23px", fontWeight: "700" }}>
               ボタンの中央を起点とした紙吹雪
             </Typography>
           </Box>
@@ -167,17 +180,23 @@ export const App: FC<{ name: string }> = ({ name }) => {
             </Typography>
             <Stack direction="row" spacing={2}>
               <Button variant="outlined" onClick={handleNormalConfetti} ref={normalConfetti} >
-                ノーマル
+                ノーマルなパーン
               </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
+              <Button variant="outlined" onClick={handleWeakConfetti} ref={weakConfetti} >
+                控えめなパーン
+              </Button>
+              <Button variant="outlined" onClick={handleFlashyConfetti} ref={flashyConfetti} >
+                ド派手なパーン
+              </Button>
+              <Button variant="outlined" onClick={handleAllDirectionConfetti} ref={allDirectionConfetti} >
                 全方向に発射
               </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
+              <Button variant="outlined" onClick={handleSlowConfetti} ref={slowConfetti} >
                 落下速度を調整
               </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
+              {/* <Button variant="outlined" onClick={handleColoredConfetti} ref={coloredConfetti} >
                 赤、白、黒
-              </Button>
+              </Button> */}
             </Stack>
           </Item>
           <Item>
@@ -206,15 +225,15 @@ export const App: FC<{ name: string }> = ({ name }) => {
               TPOにあわせた紙吹雪
             </Typography>
             <Stack direction="row" spacing={2}>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
+              <Button variant="outlined" onClick={handleChristmasConfetti} ref={christmasConfetti} >
                 クリスマス
               </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
+              <Button variant="outlined" onClick={handleHallowinConfetti} ref={hallowinConfetti} >
                 ハロウィン
               </Button>
-              <Button variant="outlined" onClick={handleButton3} ref={buttonRef3} >
+              {/* <Button variant="outlined" onClick={handleNewYearConfetti} ref={newYearConfetti} >
                 お正月
-              </Button>
+              </Button> */}
             </Stack>
           </Item>
           <Item>
@@ -272,7 +291,7 @@ export const App: FC<{ name: string }> = ({ name }) => {
 
       </Stack>
 
-    </main>
+    </main >
 
   );
 };
