@@ -161,10 +161,66 @@ export default function useTpoConfetti() {
         setTimeout(() => shoot({ angle: 60, decay: 0.8 }), 400);
     };
 
+    const goodButtonConfetti = useRef<HTMLButtonElement>(null);
+    const handleGoodButtonConfetti = () => {
+        var scalar = 2;
+        var star1 = confetti.shapeFromText({ text: '⭐️', scalar });
+        var star2 = confetti.shapeFromText({ text: '✨', scalar });
+        // 中心座標を取得
+        const { centerX, centerY } = getCentralCoordinates(goodButtonConfetti)
+        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
+        function shoot(param: { angle: number, decay: number, ticks: number }) {
+            confetti({
+                // パーティクルの数（デフォルト50)
+                particleCount: 15,
+                // 発射角度(デフォルト90度)
+                angle: param ? param.angle : 90,
+                // 発射範囲(デフォルト45度)
+                spread: 360,
+                // 失速具合 デフォルト0.9
+                decay: 0.3,
+                //重力 (0-1)
+                gravity: 0,
+                // confettiが動く長さ (default: 200)
+                ticks: param.ticks,
+                origin: {
+                    x: centerX / window.innerWidth,
+                    y: centerY / window.innerHeight
+                },
+                // 紙吹雪の形を指定
+                shapes: [ triangle],
+                // 紙吹雪のサイズを指定
+                scalar: 0.8,
+                // 紙吹雪の色を指定。配列でいくつも指定できる
+                colors: [
+                    //'#b78700', '#eeb600', '#fff71', '#f8da45',
+                    '#ff0000', '#ff7676'],
+                // z-indexを指定(default:100)
+                zIndex: 100
+            });
+        }
+        // shoot({ angle: 23, decay: 0.9 });
+        setTimeout(() => shoot({ angle: 90, decay: 1, ticks: 50 }), 0);
+        setTimeout(() => shoot({ angle: 0, decay: 1, ticks: 30 }), 110);
+        //setTimeout(() => shoot({ angle: 90, decay: 0.1 }), 200);
+        // setTimeout(() => shoot({ angle: 120, decay: 0.1 }), 200);
+        // setTimeout(() => shoot({ angle: 150, decay: 0.1 }), 300);
+        // setTimeout(() => shoot({ angle: 180, decay: 0.8 }), 400);
+        // setTimeout(() => shoot({ angle: 210, decay: 0.8 }), 100);
+        // setTimeout(() => shoot({ angle: 240, decay: 0.8 }), 200);
+        // setTimeout(() => shoot({ angle: 270, decay: 0.8 }), 300);
+        // setTimeout(() => shoot({ angle: 300, decay: 0.8 }), 400);
+        // setTimeout(() => shoot({ angle: 330, decay: 0.8 }), 100);
+        // setTimeout(() => shoot({ angle: 360, decay: 0.8 }), 200);
+        // setTimeout(() => shoot({ angle: 0, decay: 0.8 }), 300);
+        // setTimeout(() => shoot({ angle: 60, decay: 0.8 }), 400);
+    };
+
     return {
         batchErrorConfetti, handleBatchErrorConfetti,
         monthlyTaskCompletedConfetti, handleMonthlyTaskCompletedConfetti,
         yearlyTaskCompletedConfetti, handleYearlyTaskCompletedConfetti,
-        gameFinishConfetti, handleGameFinithConfetti
+        gameFinishConfetti, handleGameFinithConfetti,
+        goodButtonConfetti, handleGoodButtonConfetti
     }
 }

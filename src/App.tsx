@@ -31,7 +31,8 @@ export const App: FC<{ name: string }> = ({ name }) => {
     handleBatchErrorConfetti, batchErrorConfetti,
     handleMonthlyTaskCompletedConfetti, monthlyTaskCompletedConfetti,
     handleYearlyTaskCompletedConfetti, yearlyTaskCompletedConfetti,
-    handleGameFinithConfetti, gameFinishConfetti
+    handleGameFinithConfetti, gameFinishConfetti,
+    handleGoodButtonConfetti, goodButtonConfetti
   } = useTpoConfetti()
 
 
@@ -84,7 +85,7 @@ export const App: FC<{ name: string }> = ({ name }) => {
 
           <Item>
             <Typography sx={{ padding: "5px" }}>
-              イベントに合わせた紙吹雪
+              TPOにあわせた紙吹雪
             </Typography>
             <Stack direction="row" spacing={2}>
               <Button variant="outlined" onClick={handleChristmasConfetti} ref={christmasConfetti} >
@@ -98,7 +99,7 @@ export const App: FC<{ name: string }> = ({ name }) => {
 
           <Item>
             <Typography sx={{ paddingBottom: "5px" }}>
-              TPOにあわせた紙吹雪
+              イベントに合わせた紙吹雪
             </Typography>
             <Stack direction="row" spacing={2}>
               <Button variant="outlined" onClick={handleBatchErrorConfetti} ref={batchErrorConfetti} >
@@ -112,6 +113,9 @@ export const App: FC<{ name: string }> = ({ name }) => {
               </Button>
               <Button variant="outlined" onClick={handleGameFinithConfetti} ref={gameFinishConfetti} >
                 Gameで<br />フィニッシュ！
+              </Button>
+              <Button variant="outlined" onClick={handleGoodButtonConfetti} ref={goodButtonConfetti} >
+                いいねボタンが押された
               </Button>
             </Stack>
           </Item>
