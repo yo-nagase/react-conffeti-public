@@ -17,7 +17,7 @@ export default function useTpoConfetti() {
                 // 発射範囲(デフォルト45度)
                 spread: 360,
                 // 失速具合 デフォルト0.9
-                decay: 0.9,
+                decay: 1,
                 //重力 (0-1)
                 gravity: 0.0,
                 // confettiが動く長さ (default: 200)
@@ -200,8 +200,9 @@ export default function useTpoConfetti() {
             });
         }
         // shoot({ angle: 23, decay: 0.9 });
-        setTimeout(() => shoot({ angle: 90, decay: 1, ticks: 50 }), 0);
-        setTimeout(() => shoot({ angle: 0, decay: 1, ticks: 30 }), 110);
+        setTimeout(() => shoot({ angle: 30, decay: 1, ticks: 50 }), 0);
+        setTimeout(() => shoot({ angle: 60, decay: 1, ticks: 30 }), 100);
+        setTimeout(() => shoot({ angle: 0, decay: 1, ticks: 30 }), 200);
         //setTimeout(() => shoot({ angle: 90, decay: 0.1 }), 200);
         // setTimeout(() => shoot({ angle: 120, decay: 0.1 }), 200);
         // setTimeout(() => shoot({ angle: 150, decay: 0.1 }), 300);
