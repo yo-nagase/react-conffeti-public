@@ -114,8 +114,9 @@ export const App: FC<{ name: string }> = ({ name }) => {
               <Button variant="outlined" onClick={handleGameFinithConfetti} ref={gameFinishConfetti} >
                 Gameで<br />フィニッシュ！
               </Button>
-              <Button variant="outlined" onClick={handleGoodButtonConfetti} ref={goodButtonConfetti} >
-                いいねボタンが押された
+              <Button variant="outlined" onClick={handleGoodButtonConfetti} ref={goodButtonConfetti}
+                sx={{ borderRadius: '40px' }} >
+                いいね！
               </Button>
             </Stack>
           </Item>
