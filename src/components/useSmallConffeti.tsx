@@ -1,21 +1,14 @@
 'use client';
 import confetti from 'canvas-confetti'
 import React, { useRef, useState } from 'react';
+import { getCentralCoordinates } from './common';
 
 
 export default function useSmallConffeti() {
-
     const normalConfetti = useRef<HTMLButtonElement>(null);
     const handleNormalConfetti = () => {
-        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
-        let centerX: number = 0
-        let centerY: number = 0
-        if (normalConfetti.current) {
-            const rect = normalConfetti.current!.getBoundingClientRect();
-            centerX = rect.x + rect.width / 2;
-            centerY = rect.y + rect.height / 2;
-            console.log('Center X:', centerX, 'Center Y:', centerY);
-        }
+        // 中心座標を取得
+        const { centerX, centerY } = getCentralCoordinates(normalConfetti)
         confetti({
             startVelocity: 30,
             origin: {
@@ -26,15 +19,8 @@ export default function useSmallConffeti() {
     };
     const weakConfetti = useRef<HTMLButtonElement>(null);
     const handleWeakConfetti = () => {
-        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
-        let centerX: number = 0
-        let centerY: number = 0
-        if (weakConfetti.current) {
-            const rect = weakConfetti.current!.getBoundingClientRect();
-            centerX = rect.x + rect.width / 2;
-            centerY = rect.y + rect.height / 2;
-            console.log('Center X:', centerX, 'Center Y:', centerY);
-        }
+        // 中心座標を取得
+        const { centerX, centerY } = getCentralCoordinates(weakConfetti)
         confetti({
             // 発射速度 (default: 45)
             startVelocity: 15,
@@ -51,15 +37,8 @@ export default function useSmallConffeti() {
 
     const allDirectionConfetti = useRef<HTMLButtonElement>(null);
     const handleAllDirectionConfetti = () => {
-        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
-        let centerX: number = 0
-        let centerY: number = 0
-        if (allDirectionConfetti.current) {
-            const rect = allDirectionConfetti.current!.getBoundingClientRect();
-            centerX = rect.x + rect.width / 2;
-            centerY = rect.y + rect.height / 2;
-            console.log('Center X:', centerX, 'Center Y:', centerY);
-        }
+        // 中心座標を取得
+        const { centerX, centerY } = getCentralCoordinates(allDirectionConfetti)
         confetti({
             // パーティクルの数（デフォルト50)
             particleCount: 100,
@@ -75,19 +54,12 @@ export default function useSmallConffeti() {
             gravity: 0.2,
             // default:0 数値を上げると横に流れる
             drift: 0,
-            // default:false
             // confettiが動く長さ (default: 200)
             ticks: 100,
             origin: {
                 x: centerX / window.innerWidth,
                 y: centerY / window.innerHeight
             },
-            // 紙吹雪の色を指定。配列でいくつも指定できる
-            // colors: ['#234343', '#993333'],
-            // 紙吹雪の形を指定
-            // shapes: ['square', triangle],
-            // 紙吹雪のサイズを指定
-            // scalar: 0.8,
             // z-indexを指定(default:100)
             zIndex: 100
         });
@@ -95,15 +67,8 @@ export default function useSmallConffeti() {
 
     const slowConfetti = useRef<HTMLButtonElement>(null);
     const handleSlowConfetti = () => {
-        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
-        let centerX: number = 0
-        let centerY: number = 0
-        if (slowConfetti.current) {
-            const rect = slowConfetti.current!.getBoundingClientRect();
-            centerX = rect.x + rect.width / 2;
-            centerY = rect.y + rect.height / 2;
-            console.log('Center X:', centerX, 'Center Y:', centerY);
-        }
+        // 中心座標を取得
+        const { centerX, centerY } = getCentralCoordinates(slowConfetti)
         confetti({
             // パーティクルの数（デフォルト50)
             particleCount: 100,
@@ -124,27 +89,14 @@ export default function useSmallConffeti() {
                 x: centerX / window.innerWidth,
                 y: centerY / window.innerHeight
             },
-            // 紙吹雪の色を指定。配列でいくつも指定できる
-            // colors: ['#234343', '#993333'],
-            // 紙吹雪の形を指定
-            // shapes: ['square', triangle],
-            // 紙吹雪のサイズを指定
-            // scalar: 0.8,
             // z-indexを指定(default:100)
             zIndex: 100
         });
     };
     const coloredConfetti = useRef<HTMLButtonElement>(null);
     const handleColoredConfetti = () => {
-        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
-        let centerX: number = 0
-        let centerY: number = 0
-        if (coloredConfetti.current) {
-            const rect = coloredConfetti.current!.getBoundingClientRect();
-            centerX = rect.x + rect.width / 2;
-            centerY = rect.y + rect.height / 2;
-            console.log('Center X:', centerX, 'Center Y:', centerY);
-        }
+        // 中心座標を取得
+        const { centerX, centerY } = getCentralCoordinates(coloredConfetti)
         confetti({
             // パーティクルの数（デフォルト50)
             particleCount: 100,
@@ -158,7 +110,6 @@ export default function useSmallConffeti() {
             gravity: 0.2,
             // default:0 数値を上げると横に流れる
             drift: 0,
-            // default:false
             // confettiが動く長さ (default: 200)
             ticks: 100,
             origin: {
@@ -177,46 +128,25 @@ export default function useSmallConffeti() {
     };
     const flashyConfetti = useRef<HTMLButtonElement>(null);
     const handleFlashyConfetti = () => {
-        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
-        let centerX: number = 0
-        let centerY: number = 0
-        if (flashyConfetti.current) {
-            const rect = flashyConfetti.current!.getBoundingClientRect();
-            centerX = rect.x + rect.width / 2;
-            centerY = rect.y + rect.height / 2;
-            console.log('Center X:', centerX, 'Center Y:', centerY);
-        }
+        // 中心座標を取得
+        const { centerX, centerY } = getCentralCoordinates(flashyConfetti)
         confetti({
             // パーティクルの数（デフォルト50)
             particleCount: 230,
             // 発射範囲(デフォルト45度)
             spread: 130,
-            // 失速具合 デフォルト0.9
-            // decay: 0.8,
-            //重力 (0-1)
-            //gravity: 0.2,
             // default:0 数値を上げると横に流れる
             drift: 0,
-            // default:false
             // confettiが動く長さ (default: 200)
             ticks: 100,
             origin: {
                 x: centerX / window.innerWidth,
                 y: centerY / window.innerHeight
             },
-            // 紙吹雪の色を指定。配列でいくつも指定できる
-            // colors: ['#234343', '#993333'],
-            // 紙吹雪の形を指定
-            // shapes: ['square', triangle],
-            // 紙吹雪のサイズを指定
-            // scalar: 0.8,
             // z-indexを指定(default:100)
             zIndex: 100
         });
     };
-
-
-
     return {
         normalConfetti, handleNormalConfetti,
         allDirectionConfetti, handleAllDirectionConfetti,

@@ -3,10 +3,7 @@ import confetti from 'canvas-confetti'
 import React, { useRef, useState } from 'react';
 import { getCentralCoordinates } from './common';
 
-
-
 export default function useTpoConfetti() {
-
     const batchErrorConfetti = useRef<HTMLButtonElement>(null);
     const handleBatchErrorConfetti = () => {
         // 中心座標を取得
@@ -23,9 +20,6 @@ export default function useTpoConfetti() {
                 decay: 0.9,
                 //重力 (0-1)
                 gravity: 0.0,
-                // default:0 数値を上げると横に流れる
-                // drift: 0,
-                // default:false
                 // confettiが動く長さ (default: 200)
                 ticks: 200,
                 origin: {
@@ -34,8 +28,6 @@ export default function useTpoConfetti() {
                 },
                 // 紙吹雪の色を指定。配列でいくつも指定できる
                 colors: ['#a70000', '#ff0000', '#ff5252', '#ffbaba'],
-                // 紙吹雪の形を指定
-                //shapes: ['square', triangle],
                 // 紙吹雪のサイズを指定
                 scalar: 0.6,
                 // z-indexを指定(default:100)
@@ -65,9 +57,6 @@ export default function useTpoConfetti() {
                 decay: 0.85,
                 //重力 (0-1)
                 gravity: 0.1,
-                // default:0 数値を上げると横に流れる
-                // drift: 0,
-                // default:false
                 // confettiが動く長さ (default: 200)
                 ticks: 200,
                 origin: {
@@ -107,9 +96,6 @@ export default function useTpoConfetti() {
                 decay: 0.85,
                 //重力 (0-1)
                 gravity: 0.5,
-                // default:0 数値を上げると横に流れる
-                // drift: 0,
-                // default:false
                 // confettiが動く長さ (default: 200)
                 ticks: 200,
                 origin: {
@@ -118,10 +104,6 @@ export default function useTpoConfetti() {
                 },
                 // 紙吹雪の色を指定。配列でいくつも指定できる
                 colors: ['#b78700', '#eeb600', '#fff71', '#f8da45'],
-                // 紙吹雪の形を指定
-                // shapes: [star1, star2],
-                // 紙吹雪のサイズを指定
-                //scalar: scalar,
                 // z-indexを指定(default:100)
                 zIndex: 100
             });
@@ -150,9 +132,6 @@ export default function useTpoConfetti() {
                 decay: 0.85,
                 //重力 (0-1)
                 gravity: 0.5,
-                // default:0 数値を上げると横に流れる
-                // drift: 0,
-                // default:false
                 // confettiが動く長さ (default: 200)
                 ticks: 200,
                 origin: {
@@ -163,10 +142,6 @@ export default function useTpoConfetti() {
                 colors: [
                     //'#b78700', '#eeb600', '#fff71', '#f8da45',
                     '#dcf2f1', '#7fc7d9', '#365486'],
-                // 紙吹雪の形を指定
-                // shapes: [star1, star2],
-                // 紙吹雪のサイズを指定
-                //scalar: scalar,
                 // z-indexを指定(default:100)
                 zIndex: 100
             });

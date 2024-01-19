@@ -48,7 +48,6 @@ export default function useEventConfetti() {
     };
     const hallowinConfetti = useRef<HTMLButtonElement>(null);
     const handleHallowinConfetti = () => {
-        var triangle = confetti.shapeFromPath({ path: 'M0 10 L5 0 L10 10z' });
         let centerX: number = 0
         let centerY: number = 0
         if (hallowinConfetti.current) {
@@ -66,10 +65,6 @@ export default function useEventConfetti() {
             ticks: 150,
             // 紙吹雪の色を指定。配列でいくつも指定できる
             colors: ['#f75f1c', '#ff9a00', '#000000', '#881ee4'],
-            // 紙吹雪の形を指定
-            // shapes: ['square', triangle],
-            // 紙吹雪のサイズを指定
-            // scalar: 0.8,
             // z-indexを指定(default:100)
             origin: {
                 x: centerX / window.innerWidth,
@@ -109,12 +104,6 @@ export default function useEventConfetti() {
                 x: centerX / window.innerWidth,
                 y: centerY / window.innerHeight
             },
-            // 紙吹雪の色を指定。配列でいくつも指定できる
-            // colors: ['#234343', '#993333'],
-            // 紙吹雪の形を指定
-            // shapes: ['square', triangle],
-            // 紙吹雪のサイズを指定
-            // scalar: 0.8,
             // z-indexを指定(default:100)
             zIndex: 100
         });
