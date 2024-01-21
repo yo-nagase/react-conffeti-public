@@ -1,26 +1,15 @@
-# react-conffeti-public
+# ボタンクリックで紙吹雪を表示する
 
-https://yo-nagase.github.io/react-conffeti-public/
+![Alt text](../public/images/christmas.gif)
 
-
-# 花吹雪を表示するReactコンポーネント
-
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/yo-nagase/react-conffeti-public)
-
-
-
-
-実際の画面
-https://yo-nagase.github.io/react-conffeti-public/
-
-
+![Alt text](../public/images/monthlycomplete.gif)
 
 Github
 https://yo-nagase.github.io/react-conffeti-public/
 
 
+実際の画面
+https://yo-nagase.github.io/react-conffeti-public/
 
-StackBlitz
-https://stackblitz.com/~/github.com/yo-nagase/react-conffeti-public
 
 
